@@ -12,14 +12,13 @@ import utils.Logger;
 
 import java.io.*;
 import java.lang.reflect.Field;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static com.codeborne.selenide.Selenide.open;
 
 public class Hooks {
 
-    private static final String BASE_URL = "https://dmitryklokov.bitbucket.io";
+    private static final String BASE_URL = "https://www.teztour.by";
 
     @Before
     public static void openBrowser(Scenario scenario){
