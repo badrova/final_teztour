@@ -14,7 +14,7 @@ import java.util.Properties;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefs", "hooks"},
-        tags = "(@smoke or @regression) and (not @slow)"
+        tags = "(@smoke or @regression)"
 )
 public class CucumberRunner {
 
@@ -31,7 +31,7 @@ public class CucumberRunner {
 
         Properties properties = new Properties();
         properties.setProperty("browser", "chrome");
-        properties.setProperty("url", "http://baseurl.com");
+        properties.setProperty("url", "https://www.teztour.by/");
 
         properties.store(fos, "allure runtime props");
     }

@@ -9,12 +9,10 @@ Feature: TourSelectionPage feature
   Scenario: go to the old site
     Then press to the old site button on the start page
 
-
   @regression
   Scenario: go to the tour selection page
     When tour selected block is shown
     Then click the extended selection link
-
 
   @regression
   Scenario: select a city
@@ -36,7 +34,6 @@ Feature: TourSelectionPage feature
     Then open the food list
     Then select the type of food in the food list
 
-
   @regression
   Scenario: hotel check-in date range
     Then select check-in date from in the calendar
@@ -55,7 +52,18 @@ Feature: TourSelectionPage feature
   @regression
   Scenario: selection of a tour by parameters
     When fill fields on the tourSelectionPage page
-    Then press the find button
+    Then click the find button
+
+  @regression
+  Scenario: go to buying a tour
+    When check the result set
+    Then click the card price
+    Then in a box buy tour click buy button
+
+
+
+
+
 
 
 
