@@ -12,14 +12,14 @@ public class Collection<T> extends ElementsCollection {
 
     private final Class<T> modelClass;
 
-    public Collection(Class<T> modelClass, By selector){
+    public Collection(Class<T> modelClass, By selector) {
         super(WebDriverRunner.driver(), selector);
         this.modelClass = modelClass;
     }
 
-    public <E extends T> E getModel(int index){
+    public <E extends T> E getModel(int index) {
         try {
-            Logger.trace("Get model " +  index);
+            Logger.trace("Get model " + index);
             return (E) modelClass
                     .getDeclaredConstructor(SelenideElement.class)
                     .newInstance(super.get(index));

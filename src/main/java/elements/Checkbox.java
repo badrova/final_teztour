@@ -3,7 +3,7 @@ package elements;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-public class Checkbox extends BaseElement{
+public class Checkbox extends BaseElement {
     public Checkbox(By by) {
         super(by);
     }
@@ -12,7 +12,7 @@ public class Checkbox extends BaseElement{
         super(wrappedElement);
     }
 
-    public void check(){
+    public void check() {
         this.logAction("Check");
         this.getWrappedElement().click();
     }

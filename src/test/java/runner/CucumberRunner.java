@@ -13,7 +13,7 @@ import java.util.Properties;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = { "stepdefs", "hooks"},
+        glue = {"stepdefs", "hooks"},
         tags = "(@smoke or @regression) and (not @slow)"
 )
 public class CucumberRunner {
@@ -23,7 +23,7 @@ public class CucumberRunner {
         final String filePath = System.getProperty("user.dir") + "/target/allure-results/environment.properties";
 
         File propsFile = new File(filePath);
-        if(propsFile.exists()){
+        if (propsFile.exists()) {
             propsFile.delete();
         }
 

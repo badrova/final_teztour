@@ -22,12 +22,12 @@ public class BaseElement {
         return wrappedElement;
     }
 
-    public boolean isVisible(){
+    public boolean isVisible() {
         this.logAction("Is visible");
         return getWrappedElement().isDisplayed();
     }
 
-    protected void logAction(String action){
+    protected void logAction(String action) {
         Logger.trace(String.format("[%s] %s - %s",
                 this.getClass().getSimpleName(),
                 action,

@@ -21,7 +21,7 @@ public class Hooks {
     private static final String BASE_URL = "https://www.teztour.by";
 
     @Before
-    public static void openBrowser(Scenario scenario){
+    public static void openBrowser(Scenario scenario) {
         Logger.info("===============================================");
         Logger.info("===============================================");
         Logger.info(String.format("Start scenario '%s'", scenario.getName()));
@@ -34,17 +34,17 @@ public class Hooks {
 
     @After
     public void afterScenario(Scenario scenario) throws NoSuchFieldException, IllegalAccessException, FileNotFoundException {
-        if(scenario.isFailed()){
+        if (scenario.isFailed()) {
             Field delegateField = scenario.getClass().getDeclaredField("delegate");
             delegateField.setAccessible(true);
             TestCaseState testCaseState = (TestCaseState) delegateField.get(scenario);
 
-            Field  stepResultsField = testCaseState.getClass().getDeclaredField("stepResults");
+            Field stepResultsField = testCaseState.getClass().getDeclaredField("stepResults");
             stepResultsField.setAccessible(true);
             ArrayList<Result> stepResults = (ArrayList<Result>) stepResultsField.get(testCaseState);
 
-            for(Result result : stepResults){
-                if(result.getStatus().is(Status.FAILED)){
+            for (Result result : stepResults) {
+                if (result.getStatus().is(Status.FAILED)) {
                     Logger.error("Scenario failed: " + result.getError().getMessage());
                 }
             }

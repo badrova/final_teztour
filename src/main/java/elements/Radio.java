@@ -3,7 +3,7 @@ package elements;
 import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 
-public class Radio extends BaseElement{
+public class Radio extends BaseElement {
     public Radio(By by) {
         super(by);
     }
@@ -12,7 +12,7 @@ public class Radio extends BaseElement{
         super(wrappedElement);
     }
 
-    public void check(){
+    public void check() {
         this.logAction("Check");
         this.getWrappedElement().click();
     }
