@@ -11,4 +11,9 @@ public class Link extends BaseElement {
     public Link(SelenideElement wrappedElement) {
         super(wrappedElement);
     }
+
+    public void click() {
+        this.logAction("Click");
+        this.getWrappedElement().click();
+    }
 }

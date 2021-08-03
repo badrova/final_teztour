@@ -13,7 +13,7 @@ public class NavBar {
     private final Button productsBtn = new Button(root.$(By.id("navbar-products-btn")));
     //..
 
-    public void openProducts(){
+    public void openProducts() {
         productsBtn.click();
     }
 }

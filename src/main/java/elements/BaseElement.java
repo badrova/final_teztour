@@ -4,6 +4,9 @@ import com.codeborne.selenide.SelenideElement;
 import org.openqa.selenium.By;
 import utils.Logger;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static com.codeborne.selenide.Selenide.$;
 
 public class BaseElement {
@@ -20,6 +23,12 @@ public class BaseElement {
 
     protected SelenideElement getWrappedElement() {
         return wrappedElement;
+    }
+
+    protected List<SelenideElement> getChildrenElements() {
+        return wrappedElement == null
+                ? new ArrayList<>()
+                : wrappedElement.findAll(By.cssSelector("*"));
     }
 
     public boolean isVisible() {

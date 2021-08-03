@@ -7,4 +7,4 @@ Feature: Checkout feature
 
   @regression
   Scenario: start page is open
-    Then start page is open
+    Then start page is open than
