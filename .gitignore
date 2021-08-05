@@ -24,6 +24,7 @@ dist/
 .idea/
 /out
 /libs
+/logs
 *iml
 
 # Unit test reports
