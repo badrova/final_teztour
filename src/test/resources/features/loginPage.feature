@@ -7,6 +7,7 @@ Feature: AuthorizationPage feature
   @regression
   Scenario: go to the login page
     Then click the My account button
+    And check that the login form is visible
 
   @regression
   Scenario: authorization in my office
