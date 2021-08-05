@@ -12,7 +12,7 @@ Feature: OrderPage feature
 
   @regression
   Scenario Outline: filling in tourists information
-    When fill all fields on the page: Surname=<surname>, Name=<name>, NationalityId=<nationalityId>, Birthday=<birthday>, PassportSeria=<passportSeria>, PassportNumber=<passportNumber>, PassportExpirationDate=<passportExpirationDate>, Inn=<inn>, Phone-<phone>
+    When fill all fields on the page: Surname=<surname>, Name=<name>, NationalityId=<nationalityId>, Birthday=<birthday>, PassportSeria=<passportSeria>, PassportNumber=<passportNumber>, PassportExpirationDate=<passportExpirationDate>, Inn=<inn>, Phone=<phone>
     And select radio button gender female
     Then click the data validation button
 
@@ -34,7 +34,7 @@ Feature: OrderPage feature
 
   @regression
   Scenario Outline: filling in buyer's personal data
-    When fill all fields on the page: Surname=<surname>, Name=<name>, MName"=<mName>, Birthday=<birthday>, PassportSeria=<passportSeria>, PassportNumber=<passportNumber>, PassportExpirationDate=<passportExpirationDate>, nationalityId=<nationalityId> , Phone-<phone>, Email=<email>
+    When fill all fields on the page: Surname=<surname>, Name=<name>, MName=<mName>, Birthday=<birthday>, PassportSeria=<passportSeria>, PassportNumber=<passportNumber>, PassportExpirationDate=<passportExpirationDate>, nationalityId=<nationalityId> , Phone=<phone>, Email=<email>
     And select the checkbox I agree with the terms of the agreement
     Then click the pay button
 

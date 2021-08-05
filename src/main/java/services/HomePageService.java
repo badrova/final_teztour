@@ -19,6 +19,10 @@ public class HomePageService {
         homePage.getSelectCityDiv().click();
     }
 
+    public void goToSelectCountry() {
+        homePage.getSelectCountryDiv().click();
+    }
+
     public boolean isCitiesListOpened() {
         Div citiesWrapperDiv = homePage.getCitiesWrapperDiv();
         for (SelenideElement child : citiesWrapperDiv.getChildrenElements()) {
@@ -27,6 +31,16 @@ public class HomePageService {
             }
         }
         return true;
+    }
+
+    public boolean isCountriesListOpened() {
+        Div countriesWrapperDiv = homePage.getCountriesWrapperDiv();
+        for (SelenideElement child : countriesWrapperDiv.getChildrenElements()) {
+            if (child.getText().equals("Куда угодно") && child.isDisplayed()) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean isMainPageLinkVisible() {
@@ -41,11 +55,19 @@ public class HomePageService {
         return homePage.getOldSiteDiv().isVisible();
     }
 
-    public void selectGrodnoCity() {
-        homePage.getCityGrodno().click();
+    public void selectGomelCity() {
+        homePage.getCityGomel().click();
+    }
+
+    public void selectCountryEgypt() {
+        homePage.getCountryEgypt().click();
     }
 
     public boolean checkSelectedCity(String city) {
         return homePage.getSelectCityDiv().getText().equals(city);
+    }
+
+    public boolean checkSelectedCountry(String country) {
+        return homePage.getSelectCountryDiv().getText().equals(country);
     }
 }
