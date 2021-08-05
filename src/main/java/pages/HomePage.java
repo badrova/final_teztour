@@ -29,6 +29,8 @@ public class HomePage {
     private final Div countryCheckedPlace = new Div(
             By.xpath("//*[@id=\"form-tour-ea1364eb37a8da5922fab06d13356692\"]/div[1]/div/div[2]/div[1]/div/div[1]/div/div/div[1]/div"));
 
+    private final Div myOffice = new Div(By.id("userInfo-place"));
+
 
     public Button getOldSiteButton() {
         return oldSiteButton;
@@ -76,5 +78,9 @@ public class HomePage {
 
     public Div getCountryCheckedPlace() {
         return countryCheckedPlace;
+    }
+
+    public Div getMyOffice() {
+        return myOffice;
     }
 }

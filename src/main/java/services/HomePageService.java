@@ -70,4 +70,8 @@ public class HomePageService {
     public boolean checkSelectedCountry(String country) {
         return homePage.getSelectCountryDiv().getText().equals(country);
     }
+
+    public boolean isMyOfficeButtonVisible () {
+        return homePage.getMyOffice().isVisible();
+    }
 }
