@@ -5,6 +5,8 @@ import io.cucumber.java.en.When;
 import services.HomePageService;
 import services.OldSiteService;
 import utils.Constants;
+import utils.DelayCondition;
+import utils.DelayUtil;
 import utils.Logger;
 
 public class TourSelectionPageStepdefs {
@@ -43,6 +45,7 @@ public class TourSelectionPageStepdefs {
 
     @Then("open the cities list")
     public void open_the_cities_list() {
+        Logger.info("\topenCityList");
         oldSiteService.openCityList();
 
 //        homePageService.goToTourSelection();
@@ -53,7 +56,7 @@ public class TourSelectionPageStepdefs {
 
     @Then("select a city in the  cities list")
     public void select_a_city_in_the_cities_list() {
-        oldSiteService.selectCity("Гомель");
+        oldSiteService.selectCityGomel();
 
 //        homePageService.selectGomelCity();
 //        assert homePageService.checkSelectedCity("Гомель");
@@ -142,7 +145,7 @@ public class TourSelectionPageStepdefs {
 
     @Then("select accommodation in the accommodation list")
     public void select_accommodation_in_the_accommodation_list() {
-        oldSiteService.selectAccommodation("2 Взрослых");
+        oldSiteService.selectFirstAccommodation();
     }
 
     @When("fill fields on the tourSelectionPage page")
@@ -150,15 +153,17 @@ public class TourSelectionPageStepdefs {
         homePageService.goToOldSite();
         oldSiteService.clickExtendedSelectionLink();
 
-        oldSiteService.selectCity("Гомель");
+        oldSiteService.openCityList();
+        oldSiteService.selectCityGomel();
         oldSiteService.selectCountry("Египет");
         oldSiteService.selectLevel("5 *");
         oldSiteService.selectTheFood("Все включено");
         oldSiteService.selectDateFrom("09.09.2021");
-        oldSiteService.selectDateTo("09.20.2021");
+        oldSiteService.selectDateTo("20.09.2021");
         oldSiteService.selectNightsFrom("10");
         oldSiteService.selectNightsTo("14");
-        oldSiteService.selectAccommodation("2 Взрослых");
+        oldSiteService.openAccommodationList();
+        oldSiteService.selectFirstAccommodation();
     }
 
     @Then("click the find button")
@@ -170,21 +175,9 @@ public class TourSelectionPageStepdefs {
     @Then("check the result set")
     public void check_the_result_set() {
         Logger.info("\tCheck the result set");
-        boolean result = false;
-        int secondsToWait = 0;
 
-        while (!result) {
-            if (secondsToWait > Constants.TOUR_SEARCH_MAX_WAITING_SECONDS) {
-                throw new io.cucumber.java.PendingException();
-            }
-            try {
-                Thread.sleep(Constants.ONE_SECOND);
-            } catch (InterruptedException exception) {
-                Logger.error(exception.toString());
-            }
-            secondsToWait++;
-            result = oldSiteService.isVisibleSelectTourDiv();
-        }
+        DelayUtil.delay(Constants.TOUR_SEARCH_MAX_WAITING_SECONDS,
+                oldSiteService::isVisibleSelectTourDiv);
     }
 
     @Then("click the card price")
@@ -192,16 +185,12 @@ public class TourSelectionPageStepdefs {
         oldSiteService.selectTheTourPrice();
     }
 
-    @Then("in a box buy tour click buy button")
-    public void in_a_box_buy_tour_click_buy_button() {
-        try {
-            Thread.sleep(Constants.ONE_SECOND * Constants.BUY_TOUR_DELAY_SECONDS);
-        } catch (InterruptedException exception) {
-            Logger.error(exception.toString());
-        }
-
-        oldSiteService.buyTour();
-
-        Logger.info("\tBuy tour.");
-    }
+//    @Then("in a box buy tour click buy button")
+//    public void in_a_box_buy_tour_click_buy_button() {
+//        DelayUtil.delay(Constants.ONE_SECOND * Constants.BUY_TOUR_DELAY_SECONDS);
+//
+//        oldSiteService.buyTour();
+//
+//        Logger.info("\tBuy tour.");
+//    }
 }

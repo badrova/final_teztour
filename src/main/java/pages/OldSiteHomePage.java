@@ -19,8 +19,11 @@ public class OldSiteHomePage {
             By.xpath("/html/body/div[5]/div[1]/div[2]/div/div[1]/div[3]/div/input"));
     private final Div selectTourPriceDiv = new Div(
             By.xpath("//*[@id=\"st-result-table\"]/tbody/tr[2]/td[9]/h5/a/div[1]"));
-    private final Button buyTourButton = new Button(By.xpath("//*[@id=\"online-buy-form\"]/input"));
-
+    private final Link buyOnlineTourLink = new Link(By.xpath("/html/body/div[1]/div/div[1]/div[1]/a"));
+    private final Option cityGomel = new Option(
+            By.xpath("/html/body/div[5]/div[1]/div[2]/div/div[1]/div[2]/div[1]/div[1]/div[1]/div[2]/select/optgroup[1]/option[3]"));
+    private final Option firstAccommodation = new Option(
+            By.xpath("/html/body/div[5]/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[3]/div[2]/select/option[1]"));
 
     public Link getTourSelectionLink() {
         return tourSelectionLink;
@@ -74,7 +77,15 @@ public class OldSiteHomePage {
         return selectTourPriceDiv;
     }
 
-    public Button getBuyTourButton() {
-        return buyTourButton;
+    public Link getBuyOnlineTourLink() {
+        return buyOnlineTourLink;
+    }
+
+    public Option getCityGomel() {
+        return cityGomel;
+    }
+
+    public Option getFirstAccommodation() {
+        return firstAccommodation;
     }
 }

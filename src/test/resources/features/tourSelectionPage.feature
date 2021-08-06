@@ -55,7 +55,7 @@ Feature: TourSelectionPage feature
     Then click the find button
     Then check the result set
     Then click the card price
-    Then in a box buy tour click buy button
+#    Then in a box buy tour click buy button
 
 
 

@@ -1,5 +1,6 @@
 package services;
 
+import com.codeborne.selenide.WebDriverRunner;
 import pages.OldSiteHomePage;
 
 public class OldSiteService {
@@ -17,8 +18,8 @@ public class OldSiteService {
         oldSiteHomePage.getCitySelector().click();
     }
 
-    public void selectCity(String option) {
-        oldSiteHomePage.getCitySelector().select(option);
+    public void selectCityGomel() {
+        oldSiteHomePage.getCityGomel().click();
     }
 
     public void openCountriesList() {
@@ -65,8 +66,8 @@ public class OldSiteService {
         oldSiteHomePage.getAccommodationSelect().click();
     }
 
-    public void selectAccommodation(String option) {
-        oldSiteHomePage.getAccommodationSelect().select(option);
+    public void selectFirstAccommodation() {
+        oldSiteHomePage.getFirstAccommodation().click();
     }
 
     public void findTour() {
@@ -82,6 +83,7 @@ public class OldSiteService {
     }
 
     public void buyTour() {
-        oldSiteHomePage.getBuyTourButton().click();
+//        WebDriverRunner.driver().switchTo().alert().accept();
+//        oldSiteHomePage.getBuyOnlineTourLink().click();
     }
 }

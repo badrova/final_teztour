@@ -1,6 +1,7 @@
 package hooks;
 
 import com.codeborne.selenide.Selenide;
+import com.codeborne.selenide.WebDriverRunner;
 import io.cucumber.core.backend.TestCaseState;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
@@ -29,6 +30,9 @@ public class Hooks {
         Logger.info("===============================================");
 
         Logger.info(String.format("Open: %s", BASE_URL));
+
+        WebDriverRunner.clearBrowserCache();
+
         open(BASE_URL);
     }
 
