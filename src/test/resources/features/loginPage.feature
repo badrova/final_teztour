@@ -14,4 +14,6 @@ Feature: AuthorizationPage feature
     When the login form is open
     Then add email to the email field
     And click the continue button
+    Then add password to the password field
+    And click the enter button
     Then check the transition to my account
