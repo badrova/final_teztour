@@ -1,6 +1,9 @@
 package services;
 
+import com.codeborne.selenide.WebDriverRunner;
 import pages.OrderPage;
+
+import java.util.ArrayList;
 
 public class OrderPageService {
     private final OrderPage orderPage = new OrderPage();
@@ -9,22 +12,29 @@ public class OrderPageService {
         orderPage.getInfoAboutTouristButton().click();
     }
 
+    public boolean isInfoAboutTouristReady() {
+        return orderPage.getInfoAboutTouristButton().isVisible();
+    }
+
     public void fillInfoAboutTourist(int touristId, String surname, String name, String nationalityId, String birthday,
-                                     boolean isFemale, boolean isMale, String passportSeria,  String passportNumber,
-                                     String passportExpirationDate, String phone) {
+                                     String isFemale, String isMale, String passportSeria,  String passportNumber,
+                                     String passportExpirationDate, String inn, String phone) {
         orderPage.getSurnameInput(touristId).clearAndType(surname);
         orderPage.getNameInput(touristId).clearAndType(name);
         orderPage.getNationalitySelect(touristId).select(nationalityId);
         orderPage.getBirthdayInput(touristId).clearAndType(birthday);
-        if (isFemale) {
-            orderPage.getGenderInputFemale(touristId).click();
+        if (Boolean.parseBoolean(isFemale)) {
+            orderPage.getGenderSelectorFemale(touristId).click();
         }
-        if (isMale) {
-            orderPage.getGenderInputMale(touristId).click();
+        if (Boolean.parseBoolean(isMale)) {
+            orderPage.getGenderSelectorMale(touristId).click();
         }
         orderPage.getPassportSeria(touristId).clearAndType(passportSeria);
         orderPage.getPassportNumber(touristId).clearAndType(passportNumber);
         orderPage.getPassportExpirationDate(touristId).clearAndType(passportExpirationDate);
+        if (orderPage.getInnInput(touristId).isVisible()) {
+            orderPage.getInnInput(touristId).clearAndType(inn);
+        }
         orderPage.getPhone(touristId).clearAndType(phone);
 
     }
@@ -39,5 +49,14 @@ public class OrderPageService {
 
     public boolean isInfoAboutTouristButtonVisible() {
         return orderPage.getInfoAboutTouristButton().isVisible();
+    }
+
+    public String getHomeAddress() {
+        return orderPage.getHomeAddress();
+    }
+
+    public void switchToSecondTab() {
+        ArrayList<String> tabs2 = new ArrayList<>(WebDriverRunner.getWebDriver().getWindowHandles());
+        WebDriverRunner.getWebDriver().switchTo().window(tabs2.get(1));
     }
 }

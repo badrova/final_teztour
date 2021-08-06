@@ -8,6 +8,8 @@ import utils.Constants;
 import utils.DelayUtil;
 import utils.Logger;
 
+import static com.codeborne.selenide.Selenide.open;
+
 public class TourSelectionPageStepdefs {
     private final HomePageService homePageService = new HomePageService();
     private final OldSiteService oldSiteService = new OldSiteService();
@@ -44,6 +46,11 @@ public class TourSelectionPageStepdefs {
 
     @Then("open the cities list")
     public void open_the_cities_list() {
+        if (homePageService.isMainPageLinkVisible()) {
+            homePageService.goToOldSite();
+            oldSiteService.clickExtendedSelectionLink();
+        }
+
         Logger.info("\topenCityList");
         oldSiteService.openCityList();
 
@@ -186,6 +193,7 @@ public class TourSelectionPageStepdefs {
     public void in_a_box_buy_tour_click_buy_button() {
 
         Logger.info("\tBuy tour.");
+        DelayUtil.delay(Constants.ONE_SECOND * Constants.BUY_TOUR_DELAY_SECONDS);
         oldSiteService.switchToBuyOnlineFrame();
         assert oldSiteService.isBuyOnlineTourLinkVisible();
         oldSiteService.buyTour();

@@ -31,7 +31,6 @@ public class HomePage {
 
     private final Div myOffice = new Div(By.id("userInfo-place"));
 
-
     public Button getOldSiteButton() {
         return oldSiteButton;
     }
