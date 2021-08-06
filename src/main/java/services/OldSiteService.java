@@ -82,8 +82,15 @@ public class OldSiteService {
         oldSiteHomePage.getSelectTourPriceDiv().click();
     }
 
-    public void buyTour() {
+    public void switchToBuyOnlineFrame() {
         WebDriverRunner.driver().switchTo().frame("fancybox-frame");
+    }
+
+    public boolean isBuyOnlineTourLinkVisible() {
+        return oldSiteHomePage.getBuyOnlineTourLink().isVisible();
+    }
+
+    public void buyTour() {
         oldSiteHomePage.getBuyOnlineTourLink().click();
     }
 }

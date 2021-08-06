@@ -36,4 +36,8 @@ public class OrderPageService {
     public void clickConfirmButton() {
         orderPage.getConfirmButton().click();
     }
+
+    public boolean isInfoAboutTouristButtonVisible() {
+        return orderPage.getInfoAboutTouristButton().isVisible();
+    }
 }

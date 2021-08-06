@@ -185,9 +185,9 @@ public class TourSelectionPageStepdefs {
     @Then("in a box buy tour click buy button")
     public void in_a_box_buy_tour_click_buy_button() {
 
-        DelayUtil.delay(Constants.ONE_SECOND * Constants.BUY_TOUR_DELAY_SECONDS);
-        oldSiteService.buyTour();
-
         Logger.info("\tBuy tour.");
+        oldSiteService.switchToBuyOnlineFrame();
+        assert oldSiteService.isBuyOnlineTourLinkVisible();
+        oldSiteService.buyTour();
     }
 }
