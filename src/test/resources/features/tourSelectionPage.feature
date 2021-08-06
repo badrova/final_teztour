@@ -1,8 +1,8 @@
 @smoke
 Feature: TourSelectionPage feature
 
-  Background:
-    Given start page is open
+#  Background:
+#    Given start page is open
 
 
   @regression
@@ -53,10 +53,7 @@ Feature: TourSelectionPage feature
   Scenario: selection of a tour by parameters
     When fill fields on the tourSelectionPage page
     Then click the find button
-
-  @regression
-  Scenario: go to buying a tour
-    When check the result set
+    Then check the result set
     Then click the card price
     Then in a box buy tour click buy button
 
