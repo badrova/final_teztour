@@ -83,7 +83,7 @@ public class OldSiteService {
     }
 
     public void buyTour() {
-//        WebDriverRunner.driver().switchTo().alert().accept();
-//        oldSiteHomePage.getBuyOnlineTourLink().click();
+        WebDriverRunner.driver().switchTo().frame("fancybox-frame");
+        oldSiteHomePage.getBuyOnlineTourLink().click();
     }
 }

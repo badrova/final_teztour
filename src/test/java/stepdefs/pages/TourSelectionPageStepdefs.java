@@ -5,7 +5,6 @@ import io.cucumber.java.en.When;
 import services.HomePageService;
 import services.OldSiteService;
 import utils.Constants;
-import utils.DelayCondition;
 import utils.DelayUtil;
 import utils.Logger;
 
@@ -139,7 +138,6 @@ public class TourSelectionPageStepdefs {
     public void open_the_accommodation_list() {
         homePageService.goToOldSite();
         oldSiteService.clickExtendedSelectionLink();
-
         oldSiteService.openAccommodationList();
     }
 
@@ -152,7 +150,6 @@ public class TourSelectionPageStepdefs {
     public void fill_fields_on_the_tour_selection_page_page() {
         homePageService.goToOldSite();
         oldSiteService.clickExtendedSelectionLink();
-
         oldSiteService.openCityList();
         oldSiteService.selectCityGomel();
         oldSiteService.selectCountry("Египет");
@@ -185,12 +182,12 @@ public class TourSelectionPageStepdefs {
         oldSiteService.selectTheTourPrice();
     }
 
-//    @Then("in a box buy tour click buy button")
-//    public void in_a_box_buy_tour_click_buy_button() {
-//        DelayUtil.delay(Constants.ONE_SECOND * Constants.BUY_TOUR_DELAY_SECONDS);
-//
-//        oldSiteService.buyTour();
-//
-//        Logger.info("\tBuy tour.");
-//    }
+    @Then("in a box buy tour click buy button")
+    public void in_a_box_buy_tour_click_buy_button() {
+
+        DelayUtil.delay(Constants.ONE_SECOND * Constants.BUY_TOUR_DELAY_SECONDS);
+        oldSiteService.buyTour();
+
+        Logger.info("\tBuy tour.");
+    }
 }
