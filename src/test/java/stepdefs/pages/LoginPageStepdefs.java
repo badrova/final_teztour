@@ -2,7 +2,6 @@ package stepdefs.pages;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import services.HomePageService;
 import services.LoginPageService;
 import utils.Logger;
@@ -38,10 +37,15 @@ public class LoginPageStepdefs {
 
     @Then("add password to password field")
     public void addPasswordToPasswordField() {
+        Logger.info("\tAdd password to password field");
+        assert loginPageService.isLoginPageVisible();
+        loginPageService.addPassword("123456789");
     }
 
     @Then("click the enter button")
     public void clickTheEnterButton() {
+        Logger.info("\tClick the enter button");
+        loginPageService.clickTheEnterButton();
     }
 
     @Then("check the transition to my account")

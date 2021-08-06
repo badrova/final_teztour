@@ -17,4 +17,17 @@ public class LoginPageService {
     public void clickTheContinueButton() {
         loginPage.getContinueButton().click();
     }
+
+    public void passFormIsVisible() {
+        loginPage.getPassFormIsVisible();
+    }
+
+    public void addPassword(final String password) {
+        loginPage.getPasswordInput().clearAndType(password);
+    }
+
+    public void clickTheEnterButton() {
+        loginPage.getEnterButton().click();
+    }
+
 }
