@@ -10,4 +10,11 @@ public class LoginPageService {
         return loginPage.getEntranceFormIsVisible().isVisible();
     }
 
+    public void addEmail(final String email) {
+        loginPage.getEmailInput().clearAndType(email);
+    }
+
+    public void clickTheContinueButton() {
+        loginPage.getContinueButton().click();
+    }
 }

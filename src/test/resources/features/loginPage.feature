@@ -11,7 +11,15 @@ Feature: AuthorizationPage feature
 
   @regression
   Scenario: authorization in my office
-    When the login form is open
     Then add email to the email field
     And click the continue button
+    Then add password to password field
+    Then click the enter button
     Then check the transition to my account
+
+    @regression
+    Scenario: exit from the office
+      Then click the  office icon
+      And click the logout button
+      Then check logout
+  

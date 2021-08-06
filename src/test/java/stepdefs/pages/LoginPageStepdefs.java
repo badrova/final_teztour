@@ -24,24 +24,43 @@ public class LoginPageStepdefs {
         assert loginPageService.isLoginPageVisible();
     }
 
-    @When("the login form is open")
-    public void theLoginFormIsOpen() {
-
-    }
-
     @Then("add email to the email field")
     public void addEmailToTheEmailField() {
-
+        Logger.info("\tAdd email to the email field");
+        loginPageService.addEmail("alia_asya@tut.by");
     }
 
     @And("click the continue button")
     public void clickTheContinueButton() {
+        Logger.info("\tClick the continue button");
+        loginPageService.clickTheContinueButton();
+    }
 
+    @Then("add password to password field")
+    public void addPasswordToPasswordField() {
+    }
+
+    @Then("click the enter button")
+    public void clickTheEnterButton() {
     }
 
     @Then("check the transition to my account")
     public void checkTheTransitionToMyAccount() {
     }
 
+
+    @Then("click the  office icon")
+    public void clickTheOfficeIcon() {
+
+    }
+
+    @And("click the logout button")
+    public void clickTheLogoutButton() {
+
+    }
+
+    @Then("check logout")
+    public void checkLogout() {
+    }
 
 }
