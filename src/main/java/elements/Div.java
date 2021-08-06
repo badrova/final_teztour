@@ -26,7 +26,4 @@ public class Div extends BaseElement {
     public String getText() {
         return getWrappedElement().getText();
     }
-
-
-
 }

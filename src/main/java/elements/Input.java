@@ -18,9 +18,8 @@ public class Input extends BaseElement {
         this.getWrappedElement().sendKeys(text);
     }
 
-    public void selectByVisibleText(String text) {
-        this.logAction("Clear and type" + text);
-        ((Input) this.getWrappedElement()).selectByVisibleText(text);
-        this.getWrappedElement().sendKeys(text);
+    public void click() {
+        this.logAction("Click");
+        this.getWrappedElement().click();
     }
 }
