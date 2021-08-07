@@ -18,7 +18,7 @@ public class OrderPageStepdefs {
     @Given("start order page is open")
     public void start_order_page_is_open() {
         Logger.info("\tSTART PAGE IS OPEN THEN TEST");
-//        open(orderPageService.getHomeAddress());
+        open(orderPageService.getHomeAddress());
     }
 
     @Then("go to tourist information")
@@ -41,11 +41,13 @@ public class OrderPageStepdefs {
 
     @Then("click the data validation button")
     public void click_the_data_validation_button() {
-       orderPageService.checkData();
+        assert !orderPageService.isPassportsDivVisible();
+        orderPageService.checkData();
     }
 
     @Then("check validation success")
     public void check_validation_success() {
-        Logger.info("\tFILL FIELDS:");
+        assert orderPageService.isPassportsDivVisible();
+        orderPageService.switchToFirstTab();
     }
 }

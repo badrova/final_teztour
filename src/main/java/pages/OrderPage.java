@@ -1,6 +1,7 @@
 package pages;
 
 import elements.Button;
+import elements.Div;
 import elements.Input;
 import elements.Selector;
 import org.openqa.selenium.By;
@@ -23,9 +24,8 @@ public class OrderPage {
 //    private Input phone;
 
     private Button checkDataButton = new Button(
-            By.id("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[2]/table/tbody/tr/td[3]/input"));
-    private Button confirmButton = new Button(
-            By.id("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[3]/table[5]/tbody/tr/td[3]/input"));
+            By.xpath("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[2]/table/tbody/tr/td[3]/input"));
+    private Div passportsDiv = new Div(By.xpath("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[3]/div[1]"));
 
     public Button getInfoAboutTouristButton() {
         return infoAboutTouristButton;
@@ -79,8 +79,8 @@ public class OrderPage {
         return checkDataButton;
     }
 
-    public Button getConfirmButton() {
-        return confirmButton;
+    public Div getPassportsDiv() {
+        return passportsDiv;
     }
 
     public String getHomeAddress() {

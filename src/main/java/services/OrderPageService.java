@@ -23,6 +23,7 @@ public class OrderPageService {
         orderPage.getNameInput(touristId).clearAndType(name);
         orderPage.getNationalitySelect(touristId).select(nationalityId);
         orderPage.getBirthdayInput(touristId).clearAndType(birthday);
+        clickName();
         if (Boolean.parseBoolean(isFemale)) {
             orderPage.getGenderSelectorFemale(touristId).click();
         }
@@ -32,6 +33,7 @@ public class OrderPageService {
         orderPage.getPassportSeria(touristId).clearAndType(passportSeria);
         orderPage.getPassportNumber(touristId).clearAndType(passportNumber);
         orderPage.getPassportExpirationDate(touristId).clearAndType(passportExpirationDate);
+        clickName();
         if (orderPage.getInnInput(touristId).isVisible()) {
             orderPage.getInnInput(touristId).clearAndType(inn);
         }
@@ -39,24 +41,29 @@ public class OrderPageService {
 
     }
 
+    private void clickName() {
+        orderPage.getSurnameInput(0).click();
+    }
+
     public void checkData() {
         orderPage.getCheckDataButton().click();
-    }
-
-    public void clickConfirmButton() {
-        orderPage.getConfirmButton().click();
-    }
-
-    public boolean isInfoAboutTouristButtonVisible() {
-        return orderPage.getInfoAboutTouristButton().isVisible();
     }
 
     public String getHomeAddress() {
         return orderPage.getHomeAddress();
     }
 
+    public void switchToFirstTab() {
+        ArrayList<String> tabs2 = new ArrayList<>(WebDriverRunner.getWebDriver().getWindowHandles());
+        WebDriverRunner.getWebDriver().switchTo().window(tabs2.get(0));
+    }
+
     public void switchToSecondTab() {
         ArrayList<String> tabs2 = new ArrayList<>(WebDriverRunner.getWebDriver().getWindowHandles());
         WebDriverRunner.getWebDriver().switchTo().window(tabs2.get(1));
+    }
+
+    public boolean isPassportsDivVisible() {
+        return orderPage.getPassportsDiv().isVisible();
     }
 }
