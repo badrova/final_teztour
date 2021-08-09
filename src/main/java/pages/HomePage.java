@@ -42,44 +42,8 @@ public class HomePage {
         return mainPageLink;
     }
 
-    public Link getTourSelectionLink() {
-        return tourSelectionLink;
-    }
-
     public Div getOldSiteDiv() {
         return oldSiteDiv;
-    }
-
-    public Div getCitiesWrapperDiv() {
-        return citiesWrapperDiv;
-    }
-
-    public Div getSelectCityDiv() {
-        return selectCityDiv;
-    }
-
-    public Div getCityCheckedPlace() {
-        return cityCheckedPlace;
-    }
-
-    public Div getCityGomel() {
-        return cityGomel;
-    }
-
-    public Div getSelectCountryDiv() {
-        return selectCountryDiv;
-    }
-
-    public Div getCountriesWrapperDiv() {
-        return countriesWrapperDiv;
-    }
-
-    public Div getCountryEgypt() {
-        return countryEgypt;
-    }
-
-    public Div getCountryCheckedPlace() {
-        return countryCheckedPlace;
     }
 
     public Div getMyOffice() {
