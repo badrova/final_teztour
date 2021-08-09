@@ -5,8 +5,6 @@ import org.openqa.selenium.By;
 
 public class OldSiteHomePage {
 
-    private final Link tourSelectionLink = new Link(
-            By.xpath("//*[@id=\"ts-form-last-tr\"]/td[1]/a"));
     private final Link extendedSelectionLink = new Link(
             By.xpath("//*[@id=\"ts-form-last-tr\"]/td[1]/a"));
     private final Selector citySelector = new Selector(
@@ -36,9 +34,6 @@ public class OldSiteHomePage {
     private final Option firstAccommodation = new Option(
             By.xpath("/html/body/div[5]/div[1]/div[2]/div/div[1]/div[2]/div[2]/div[3]/div[2]/select/option[1]"));
 
-    public Link getTourSelectionLink() {
-        return tourSelectionLink;
-    }
 
     public Link getExtendedSelectionLink() {
         return extendedSelectionLink;

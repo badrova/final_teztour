@@ -39,8 +39,6 @@ public class TourSelectionPageStepdefs {
         Logger.info("\tTour selection page, click the extended selection link");
         oldSiteService.clickExtendedSelectionLink();
         Logger.info("\tOn the extended selection");
-//        homePageService.goToTourSelection();
-//        assert !homePageService.isTourSelectionLinkVisible();
     }
 
     @Then("open the cities list")
@@ -52,47 +50,30 @@ public class TourSelectionPageStepdefs {
 
         Logger.info("\topenCityList");
         oldSiteService.openCityList();
-
-//        homePageService.goToTourSelection();
-//        assert !homePageService.isCitiesListOpened();
-//        homePageService.goToSelectCity();
-//        assert homePageService.isCitiesListOpened();
     }
 
     @Then("select a city in the  cities list")
     public void select_a_city_in_the_cities_list() {
         oldSiteService.selectCityGomel();
-
-//        homePageService.selectGomelCity();
-//        assert homePageService.checkSelectedCity("Гомель");
     }
 
     @Then("open the countries list")
     public void open_the_countries_list() {
         oldSiteService.openCountriesList();
-
-//        homePageService.goToTourSelection();
-//        assert !homePageService.isCountriesListOpened();
-//        homePageService.goToSelectCountry();
-//        assert homePageService.isCountriesListOpened();
     }
 
     @Then("select the country in the countries list")
     public void select_the_country_in_the_countries_list() {
         homePageService.goToOldSite();
         oldSiteService.clickExtendedSelectionLink();
-
         oldSiteService.selectCountry("Египет");
 
-//        homePageService.selectCountryEgypt();
-//        assert homePageService.checkSelectedCountry("Египет");
     }
 
     @Then("open the level list")
     public void open_the_level_list() {
         homePageService.goToOldSite();
         oldSiteService.clickExtendedSelectionLink();
-
         oldSiteService.openLevelList();
     }
 
