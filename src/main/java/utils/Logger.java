@@ -3,6 +3,7 @@ package utils;
 import org.apache.logging.log4j.LogManager;
 
 public class Logger {
+
     private static final ThreadLocal<org.apache.logging.log4j.Logger> LOGGER = ThreadLocal.withInitial(() ->
             LogManager.getLogger(Logger.class)
     );

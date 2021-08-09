@@ -11,21 +11,11 @@ public class OrderPage {
 
     private final Button infoAboutTouristButton = new Button(By.id("stepTo2"));
 
-//    private Input surnameInput;
-//    private Input nameInput;
-//    private Selector nationalitySelect;
-//    private Input birthdayInput;
-//    private Selector genderInputFemale;
-//    private Selector genderInputMale;
-//    private Input passportSeria;
-//    private Input passportNumber;
-//    private Input passportExpirationDate;
-//    private Input innInput;
-//    private Input phone;
 
     private Button checkDataButton = new Button(
             By.xpath("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[2]/table/tbody/tr/td[3]/input"));
-    private Div passportsDiv = new Div(By.xpath("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[3]/div[1]"));
+    private Div passportsDiv = new Div(
+            By.xpath("/html/body/div[5]/div[1]/div[2]/div[1]/div[2]/form/div[3]/div[1]"));
 
     public Button getInfoAboutTouristButton() {
         return infoAboutTouristButton;

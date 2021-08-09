@@ -6,6 +6,7 @@ import pages.OrderPage;
 import java.util.ArrayList;
 
 public class OrderPageService {
+
     private final OrderPage orderPage = new OrderPage();
 
     public void goToInfoAboutTourist() {

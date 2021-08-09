@@ -1,6 +1,7 @@
 package utils;
 
 public final class DelayUtil {
+
     private DelayUtil() {
     }
 

@@ -14,7 +14,7 @@ import java.util.Properties;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepdefs", "hooks"},
-        tags = "(@smoke or @regression)"
+        tags = "(@smoke)"
 )
 public class CucumberRunner {
 
