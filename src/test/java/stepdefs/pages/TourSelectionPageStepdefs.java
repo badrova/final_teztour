@@ -8,9 +8,8 @@ import utils.Constants;
 import utils.DelayUtil;
 import utils.Logger;
 
-import static com.codeborne.selenide.Selenide.open;
-
 public class TourSelectionPageStepdefs {
+
     private final HomePageService homePageService = new HomePageService();
     private final OldSiteService oldSiteService = new OldSiteService();
 
